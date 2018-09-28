@@ -1,0 +1,88 @@
+#The None object is used to represent the absence of a value. 
+null in other programming languages
+
+Using Dictionaries:
+--------------------
+Dictionaries are data structures used to map arbitrary keys to values. 
+ages = {"Dave": 24, "Mary": 42, "John": 58}
+print(ages["Dave"])
+print(ages["Mary"])
+
+pr={"red":[3,4,5],"green":[4,6,3,6]}
+pr["green"]
+
+we can use in or not in return true or false
+
+
+A useful dictionary method is get. It does the same thing as indexing, but if the key is not found in the dictionary it returns another specified value instead ('None', by default).
+print(pairs.get("red"))
+
+
+Tupes in Python:
+----------------
+Tuples are very similar to lists, except that they are immutable (they cannot be changed)
+words = ("spam", "eggs", "sausages",)
+
+list slices
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[2:8:3]) #[2:8:3] will include elements starting from the 2nd index up to the 8th with a step of 3.
+[4, 25]
+
+
+List comprehensions 
+cubes = [i**3 for i in range(5)]
+[0, 1, 8, 27, 64]
+
+
+evens=[i**2 for i in range(10) if i**2 % 2 == 0]
+#Trying to create a list in a very extensive range will result in a MemoryError, This issue is solved by generators.
+
+string format combines non string to strings:
+nu=[1,2,4]
+msg="numbers: {0},{1},{2}".format(nu[0],nu[1],nu[2])
+we can do string formatting with named argument
+a = "{x}, {y}".format(x=5, y=12)
+
+Some useful string function:
+
+print(", ".join(["spam", "eggs", "ham"]))
+#prints "spam, eggs, ham"
+
+print("Hello ME".replace("ME", "world"))
+#prints "Hello world"
+
+print("This is a sentence.".startswith("This"))
+# prints "True"
+
+print("This is a sentence.".endswith("sentence."))
+# prints "True"
+
+print("This is a sentence.".upper())
+# prints "THIS IS A SENTENCE."
+
+print("AN ALL CAPS SENTENCE".lower())
+#prints "an all caps sentence"
+
+print("spam, eggs, ham".split(", "))
+#prints "['spam', 'eggs', 'ham']"
+
+numeric function in python list
+max(li),min(li),abs(li),sum(li)
+
+
+list functions: "all" and "any" "enumerate "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

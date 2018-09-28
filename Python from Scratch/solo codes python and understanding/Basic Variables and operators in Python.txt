@@ -1,0 +1,59 @@
+Python Introduction:
+-------------------
+Scripting language
+object oriented
+Interpreter( need not compile the program before execution)
+
+
+commenting
+----------
+# for single comment
+''' for multiple line comments either """ or '''
+escape sequence while using ' is '\' print("hemanth\'s pen")
+
+Variables names
+---------------
+a=1 or number_1=1, num_b=3 variables should not start with number
+after assingment use del function to delete the variable
+a=10
+del a => this will delete the variable
+Python is not stongly typed
+int()
+str()
+this command takes the input from console
+name = input("enter the name")
+the name is string
+
+operators:
+a+b add
+a-b sub
+a*b multiply
+a/b div (5/2) = 2.5
+a//b divide and gives the whole number 5//2 =2 (not 2.5) #quotent
+a**b a power b => 2**3 = 8
+a%b modulo divide gives the # reminder
+
+
+String operation in python:
+--------------------------------
+
+"hemanth"+"3" is correct
+"hemanth"+3 is error
+"hemanth"*2 gives the repeated version of the string
+hemanthhemanthhemanth
+"hemu"*2.0 gives error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

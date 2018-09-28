@@ -1,0 +1,68 @@
+Using functions and modules:
+
+defining funcions:
+----------------
+
+def func_name(arg1,arg2,arg3):
+	return value
+
+functions can also be used to re assign to another object
+
+def minder(arg1, arg2):
+	statements
+	return
+
+duplicateMinder=minder
+duplicateMinder(2,3) => the same duplicateMinder can also be used
+
+Functions can also be passed as arguments;
+-------------
+def add(a,b):
+	return a+b
+
+def do_twice(func,a,b):
+	return func(func(a,b),func(a,b))
+
+do_twice(add,a,b)
+
+Modules in Python:
+-----------------------
+importing the modules to the program
+
+import random
+
+for i in range(5):
+	value= random.randint(1,6)
+	print(value)
+we can use 'from' module import function to import only certain functions
+from math import pi
+from math import  * => imports all the functions
+we can import a module using 'as' as alias 
+
+
+types of modules in python:
+-------------------------
+those you write yourself
+those you install from external sources
+those that are preinstalled with Python
+
+using pip python Package index(PyPi)
+used to install third party libraries other than python 3 
+example:
+pip install library_name
+pip install pandas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

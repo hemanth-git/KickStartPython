@@ -1,0 +1,113 @@
+The primary key's main features:
+- It must contain a unique value for each row.
+- It cannot contain NULL values.
+
+SQL can:
+- insert, update, or delete records in a database.
+- create new databases, table, stored procedures, views. 
+- retrieve data from a database, etc.
+
+SHOW DATABASES -> to display all the databases in the server.
+SHOW TABLES -> to view all the tables in the selected database
+SHOW COLUMNS FROM CUSTOMERS ->	Displays all the columns
+
+SELECT FIRSTNAME FROM CUSTOMERS -> returns all the rows from the customers with first name column
+SELECT DISTINT CITY FROM CUSTOMERS -> returns only the unique cities
+SELECT * FROM CUSTOMERS
+LIMT 5;
+	
+	only 5 records are fetched
+
+LIMIT 3,5
+	only 5 records are fetched starting from position 4
+
+SELECT * FROM CUSTOMERS
+ORDERBY AGE;
+	by default the orderby is ascending order.
+ORDERBY AGE,FIRSTNAME;
+	orderby of mulitple columns are done one after the other.
+
+Comparision operators:
+--------------------
+=,!=,>,<,BETWEEN-> between an inclusive range
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+Logical operators:
+-----------------------
+AND, OR, IN, NOT
+
+The IN operator is used when you want to compare a column with more than one value. 
+
+SELECT * FROM customers 
+WHERE City IN ('New York', 'Los Angeles', 'Chicago');
+
+NOT IN -> is negation of the above.
+
+Using CONCAT() to concat the text values to one col
+SELECT CONCAT(FirstName, ', ' , City) FROM customers;
+
+SubQuries:
+SELECT FirstName, Salary FROM employees 
+WHERE  Salary > (SELECT AVG(Salary) FROM employees) 
+ORDER BY Salary DESC;
+
+Joining Tables:
+----------------
+SELECT customers.ID, customers.Name, orders.Name, orders.Amount
+FROM customers, orders
+WHERE customers.ID=orders.Customer_ID
+ORDER BY customers.ID;
+
+Types of Join
+
+The following are the types of JOIN that can be used in MySQL:
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+
+INNER JOIN:
+SELECT column_name(s)
+FROM table1 INNER JOIN table2 
+ON table1.column_name=table2.column_name;
+
+LEFT JOIN
+
+The LEFT JOIN returns all rows from the left table, even if there are no matches in the right table. 
+
+This means that if there are no matches for the ON clause in the table on the right, the join will still return the rows from the first table in the result.
+
+The following SQL statement will return all customers, and the items they might have:
+SELECT customers.Name, items.Name 
+FROM customers LEFT OUTER JOIN items 
+ON customers.ID=items.Seller_id;
+
+If no match is found for a particular row, NULL is returned.
+
+RIGHT JOIN
+
+The RIGHT JOIN returns all rows from the right table, even if there are no matches in the left table.
+
+SELECT table1.column1, table2.column2...
+FROM table1 RIGHT OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+Again, the OUTER keyword is optional, and can be omitted.
+
+The UNION operator is used to combine the result-sets of two or more SELECT statements.
+
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+
+
+
+
+
+
+
+
+
+

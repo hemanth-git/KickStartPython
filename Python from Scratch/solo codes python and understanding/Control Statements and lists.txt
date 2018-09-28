@@ -1,0 +1,104 @@
+Control Statements
+---------------------
+== equality check
+!= not equal
+<,> (string can be compared in pythong and are alphabatically compared) "he">"she" => false
+
+if else in python:
+--------------
+if x>y:
+    statement1
+elif y<x:
+    statement2
+else:
+    statment3
+
+Boolean not
+to get the inverse of any operator
+not 1==1 => gives False
+
+while loop
+-----------------
+while i<5:
+	print(i)
+	i=i+1
+	if i=3:
+		break
+
+continue jumps back to the top of the loop
+
+
+Lists in python:
+--------------------
+li=[1,2,3,4,5]
+li[1] => gives 2
+list can nested with other list
+things = ["string", 0, [1, 2, 'number'], 4.56]
+things[2][2] => gives "number'
+
+using 'in' and 'not' in list
+7 in li => gives False
+7 not in li => gives True
+
+Functions used in list:
+--------------------------
+li.append(4) => appends 4 to list
+len(li) => length of list
+li.insert(0,"numbers") => insert is used to insert a value at index mentioned
+li.index("numbers") => gives the index of the string "numbers"
+max(li)=> max in the list
+min(li)
+li.count("obj") => gives the count of "obj" in list or frequency of the occurences
+li.remove("obj") => removes "obj" from the list
+li.reverse() => Reverses the list inplace, doesnot returns the list
+
+Range function:
+-----------
+list(range(10)) => returns a list of range of numbers starting from 0 to 9
+list(range(3,8)) => returns list from 3 to 7
+list(range(5,20,2)) => returns a list from 5 to 19 with interval of 2
+
+for loop in python:
+---------------------
+li=['a','bcn','asd','asdf']
+
+for i in li:
+    print(i)
+
+using range function
+
+for i in range(5);
+	print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

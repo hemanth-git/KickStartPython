@@ -1,0 +1,131 @@
+Lambdas
+(lambda x: x**2 + 5*x + 4) (-4)
+map:
+def add_five(x):
+  return x + 5
+result = list(map(add_five, nums))
+
+using filters
+
+nums = [1, 2, 8, 3, 7]
+res = list(filter(lambda x:x%2==0, nums))
+print(res)
+
+filter : to select....
+
+Generators
+---------------------
+ are like iterables, like lists or tuples.
+can be implemented using yield statement. they can be iterated only by for loops
+
+def countdown():
+  i=5
+  while i > 0:
+    yield i
+    i -= 1
+
+for i in countdown():
+  print(i)
+
+Adv: Generators don't have any restrictions like list
+generators allow you to declare a function that behaves like an iterator, i.e. it can be used in a for loop.
+
+Decorators:
+------------------
+Decorators provide a way to modify functions using other functions. 
+def decor(func):
+  def wrap():
+    print("============")
+    func()
+    print("============")
+  return wrap
+
+def print_text():
+  print("Hello world!")
+
+decorated = decor(print_text)
+decorated()
+Python provides support to wrap a function in a decorator by pre-pending the function definition with a decorator name and the @ symbol. 
+@decor
+def print_text():
+  print("Hello world!")
+
+Set data structures:
+---------------
+sets are like  similar to lists or dictionaries.(no duplicate entries)
+num_set = {1, 2, 3, 4, 5}
+word_set = set(["spam", "eggs", "sausage"])
+sets share all the methods as list except add instead of append
+nums = {1, 2, 1, 3, 1, 4, 5, 6}
+print(nums)
+nums.add(-7)
+nums.remove(3)
+Basic uses of sets include membership testing and the elimination of duplicate entries
+
+The union operator | combines two sets to form a new one containing items in either. 
+The intersection operator & gets items only in both. 
+The difference operator - gets items in the first set but not in the second. 
+The symmetric difference operator ^ gets items in either set, but not both.
+
+first = {1, 2, 3, 4, 5, 6}
+second = {4, 5, 6, 7, 8, 9}
+
+print(first | second)
+print(first & second)
+print(first - second)
+print(second - first)
+print(first ^ second)
+
+Data structures in python:
+------------------------------
+As we have seen in the previous lessons, Python supports the following data structures: lists, dictionaries, tuples, sets.
+
+When to use a dictionary:
+- When you need a logical association between a key:value pair.
+- When you need fast lookup for your data, based on a custom key.
+- When your data is being constantly modified. Remember, dictionaries are mutable.
+
+When to use the other types:
+- Use lists if you have a collection of data that does not need random access. Try to choose lists when you need a simple, iterable collection that is modified frequently.
+- Use a set if you need uniqueness for the elements. 
+- Use tuples when your data cannot change. 
+
+
+itertools:
+-----------
+infinte iterators, library contains serveral functions
+count() counts up infinitely from a value. 
+cycle() infinitely iterates through an iterable (for instance a list or string)
+repeat() repeats an object, either infinitely or a specific number of times
+
+from itertools import count
+for i in count(3):
+  print(i)
+  if i >=11:
+    break
+takewhile() - takes items from an iterable while a predicate function remains true;
+chain() - combines several iterables into one long one; 
+accumulate() - returns a running total of values in an iterable.
+
+from itertools import accumulate, takewhile
+nums = list(accumulate(range(8)))
+print(nums)
+print(list(takewhile(lambda x: x<= 6, nums)))
+
+product and permutation.
+These are used when you want to accomplish a task with all possible combinations of some items.
+
+from itertools import product, permutations
+
+letters = ("A", "B")
+print(list(product(letters, range(2))))
+#product() for two list
+print(list(permutations(letters))) 
+#permutation for only one list
+
+[('A', 0), ('A', 1), ('B', 0), ('B', 1)] #product
+[('A', 'B'), ('B', 'A')] # permutations
+
+
+
+

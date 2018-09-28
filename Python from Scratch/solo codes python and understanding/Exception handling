@@ -1,0 +1,104 @@
+Error Handling:
+------------------
+try catch block
+
+try:
+	stmt1
+	stmt2
+except:
+	print(error)
+
+using finally to execute no matter whether the error occurs or not
+try:
+	...
+except:
+	...
+finally:
+	...
+
+we can use raise exceptions to trigger the exception
+need to specify the type of exception to raised
+print(1)
+raise ValueError
+exceptions can be raised with arguments;
+name-'123'
+raise NameError("invalid name")
+
+
+Assertions:
+-----------------
+assertion is a sanity check you can turn on or off
+if a result comes up false, an exception is raised.
+Ex:-
+print(1)
+assert 2+2 == 4
+print(2)
+assert 1+1 == 3
+print(3)
+
+assertion can take an another argument 
+asert (temp>=0),"cool than absolute zero" => gives "AssertionError: "cool than absolute zero"
+
+Files operations:
+------------------
+myfile = open("filname.txt")
+we can specify the mode as second argument
+file= open("filename.txt","w") =>write
+open("filename.txt","r") => read
+open("filename.txt","wb") => ("rb" or "wb")binary write, which is used for non-text files (such as image and sound files).which is used for non-text files (such as image and sound files).
+
+file.close() => to close the file
+
+To Read the contents of the files:
+file=open("opentxt.txt","r")
+txtread=file.read() => to read all the contents of the file
+file.close()
+
+to read only certain number of bytes from the file
+file = open("filename.txt", "r")
+print(file.read(16))
+print(file.read(4))
+print(file.read(4))
+You can make more calls to read on the same file object to read more of the file byte by byte. With no argument, read returns the rest of the file.
+To retrieve each line in a file, you can use the readlines method to return a list in which each element is a line in the file.
+file = open("filename.txt", "r")
+print(file.readlines())
+file.close()
+
+we use for loop to read lines in the file:
+file = open("filename.txt", "r")
+
+for line in file:
+    print(line)
+
+file.close() 
+
+Writing the content to the files
+-------------------------------
+file=open("file.txt","w")
+file.write("content to write") # The "w" mode will create a file, if it does not already exist.
+file.close()
+#When a file is opened in write mode, the file's existing content is deleted.
+amount_written = file.write(msg) # write file return amount of bytes written to the file
+
+using try and finally is to close the file is good practice:
+try:
+   f = open("filename.txt")
+   print(f.read())
+finally:
+   f.close()
+
+Alternative way is using "with"
+this creates a temporary variable "f" which is accessible only in the indented block of with
+
+with open("file.txt") as f:
+	print(f.read())
+The file is automatically closed at the end of the with statement, even if exceptions occur within it.
+
+
+
+
+
+
+
+
